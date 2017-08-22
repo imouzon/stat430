@@ -5,9 +5,296 @@ class: center, middle, inverse
 # STAT 430: Lecture 1 
 ## Why Computer Scientists Study Statistics
 ### Chapter 1: Introduction
-.footnote[Course page: [imouzon.github.io/stat420](https://imouzon.github.io/stat420)]
+.footnote[Course page: [imouzon.github.io/stat420](https://imouzon.github.io/stat430)]
 ---
 # A Little Background
+## A Quick Review of Sets, Functions, and Chaos
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ]
+.right-column[
+   ## Terminology and Notation for Sets
+
+   A _set_ is finite or infinite collection of objects in which order has no significance and multiplicity is also generally ignored.
+
+   We generally use capital letters, in bold face when typed, for sets such as 
+   \\(
+   \mathbf{A}, \mathbf{B}, \mathbf{A\_1}, \mathbf{A\_2}, \ldots, \mathbf{A\_n}
+   \\) 
+   and so on.
+   When a set is defined explicitly, we will generally use the following notation
+   \\[
+   \mathbf{A} = \\{a\_1, a\_2, \ldots, a\_n\\}
+   \\]
+   \\[
+   \mathbf{B} = \\{b\_1, b\_2, \ldots \\}
+   \\]
+   Or describe a rule that all elements of the set must fit
+   \\[
+   \mathbf{A} = \\{x > 0 : x\mod 3 = 5\\}
+   \\]
+   The objects collected in the set are referred to as _elements_ of the set.
+   We can indicate an object is an element of set by writing
+   \\(
+   a \in \mathbf{A}
+   \\)
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+]
+.right-column[
+## Special Sets
+Certain sets are dealt with so regularly that they have their own standard representations.
+
+-  \\(\mathbf{S}\\) is the *universe*, the set containing all the elements being considered in a situation
+-  \\(\emptyset\\) is the *empty set* or the set containing no elements.
+-  the real numbers: \\(\mathbb{R} = (-\infty, \infty)\\)
+-  the integers: \\(\mathbb{Z} = \\{\ldots, -2, -1, 0, 1, 2, \ldots\\}\\)
+-  the positive real numbers: \\(\\mathbb{R^{+}} = (0, \infty)\\)
+-  the positive real numbers include 0: \\(\\mathbb{R^{+}\_0} = [0, \infty)\\) <!----]-->
+
+## Special Circumstances
+Because the concept of sets has such wide application, many fields have special notation that identifies a specific set as having special properties or roles:
+
+-  \\(\mathcal{F}\\) is used in measure theory to denote the set of "measureably sets"
+-  \\(\mathcal{B}\_r(\mathbf{p})\\) is used in topology as the ball of radius \\(r\\) centered at \\(\mathbf{p}\\).
+
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+  ### Operations
+]
+.right-column[
+## Set Operations
+
+**Complimention**
+
+_Motivation: I want to say "everything that is not in the set"_
+
+The **compliment** of a set \\(\mathbf{A}\\) is a set containing all the elements that are not elements of \\(\mathbf{A}\\).
+\\[
+\mathbf{A}^c = \\{x : x \notin \mathbf{A}\\}
+\\]
+
+_examples_: 
+
+If \\(\mathbf{S} = \\{a, b, c, d, e\\}\\) and \\(\mathbf{A} = \\{a, b, c\\}\\) then \\(\mathbf{A}^c = \\{d, e\\}\\)
+
+_note_: \\(\mathbf{S}^c = \emptyset\\)
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+  ### Operations
+]
+.right-column[
+## Set Operations
+
+**Cardinality**
+
+Motivation: I want to say how many elements are in a set
+
+The cardinality of a set \\(\mathbf{A}\\), notated \\(|\mathbf{A}|\\) is the number of elements in the setIf \\(\mathbf{A}\\) and \\(\mathbf{B}\\) are any two sets then \\(\mathbf{A} \cap \mathbf{B}\\) is the union.
+
+_examples_: 
+
+If \\(\mathbf{A} = \\{1, 2, 3, 4, 5, 6\\}\\) and \\(\mathbf{B} = \\{b, c\\}\\) then 
+
+\\(|\mathbf{A}| = 6\\), 
+
+\\(|\mathbf{B}| = 2\\), 
+
+and 
+
+\\(|\mathbf{A}| - |\mathbf{B}| = 4\\)
+
+_note_: 
+
+\\(|\mathbb{Z}|\\) and \\(|\mathbb{R}|\\) are both infinitely large
+
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+  ### Using sets
+]
+.right-column[
+## Set Operations
+
+**Subsets**
+
+Motivation: I want to say that everything in one set is in another set
+
+A set \\(\mathbf{A\_1}\\) is a **subset** of a set \\(\mathbf{A\_0}\\) if every element in \\(\mathbf{A}\_1\\) is also in a \\(\mathbf{A}\_0\\)
+In this case we would write:
+\\[
+\mathbf{A}\_1 \subset \mathbf{A}\_0
+\\]
+
+_example_: 
+
+Let \\(\mathbf{A} = \\{1, 2, 3, 4, 5, 6\\}\\) and let \\(\mathbf{B} = \\{x \in \mathbb{R}: x \ge 1\\}\\).
+
+Then \\(\mathbf{A} \subset \mathbf{B}\\) since each value in \\(\mathbf{A}\\) is greater than or equal to 1.
+
+_example_: 
+
+Let \\(\mathbf{A}\_k = [-k,k]\\) for any \\(k \in \mathbb{Z}^+\\). Then 
+\\[
+\mathbf{A}\_1 \subset
+\mathbf{A}\_2 \subset
+\mathbf{A}\_3 \subset \ldots
+\\]
+
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+  ### Operations
+]
+.right-column[
+
+**Union**
+
+_Motivation: I want to say "everything that is in either of two sets"_
+
+The union of a two sets \\(\mathbf{A}\\) and \\(\mathbf{B}\\) is the set consisting of all elements that can be found in either set.
+\\[
+\mathbf{A}\cup\mathbf{B} = \\{x : x \in A \text{ or } x \in B\\}
+\\]
+**Intersection**
+
+_Motivation: I want to say "everything that is in both sets**_
+
+The **intersection** of two sets \\(\mathbf{A}\\) and \\(\mathbf{B}\\) is the set consisting of any element that is in both \\(\mathbf{A}\\) and \\(\mathbf{B}\\).
+
+is a set then we can write **the compliment of \\(\mathbf{A}\\)** as \\(\mathbf{A}^c\\) (or less commonly \\(\bar{\mathbf{A}}\\)).
+
+If \\(\mathbf{A} = \\{1, 2, 3, 4, 5, 6\\}\\) and \\(\mathbf{B} = \\{b, c\\}\\) then 
+
+\\(\mathbf{A}\cup\mathbf{B} = \\{1, 2, 3, 4, 5, 6, b, c\\}\\) and
+\\(\mathbf{A}\cap\mathbf{B} = \emptyset\\)
+
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+  ### Operations
+]
+.right-column[
+
+**Mutually exclusive**
+
+_Motivation: I want to say "there are no elements that are in both sets"_
+
+When we refer to sets
+\\(\mathbf{A}\\)
+and
+\\(\mathbf{B}\\)
+as **mutually exclusive** or **disjoint** what we mean is that the intersection of the sets is empty.
+That is
+\\[
+\mathbf{A} \cup \mathbf{B} = \emptyset
+\\]
+
+**Exhaustive**
+
+_Motivation: I want to say "every element is in the union of two sets"_
+
+When we refer to sets
+\\(\mathbf{A}\\)
+and
+\\(\mathbf{B}\\)
+as **exhaustive** what we mean is that the union of the sets is the universe.
+That is
+\\[
+\mathbf{A} \cup \mathbf{B} = \emptyset
+\\]
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+  ### Operations
+]
+.right-column[
+
+**Some rules**
+
+Distributivity: 
+
+\\[
+( \mathbf{A} \cup \mathbf{B} ) \cap \mathbf{C} = (\mathbf{A} \cap \mathbf{C}) \cup (\mathbf{B} \cap \mathbf{B})
+
+( \mathbf{A} \cap \mathbf{B} ) \cup \mathbf{C} = (\mathbf{A} \cup \mathbf{C}) \cap (\mathbf{B} \cup \mathbf{C})
+\\]
+
+Compliments:
+
+\\[
+( \mathbf{A} \cup \mathbf{B} )^c = \mathbf{A}^c \cap \mathbf{B}^c
+
+( \mathbf{A} \cap \mathbf{B} )^c = \mathbf{A}^c \cup \mathbf{B}^c
+\\]
+
+(binding rules: "not" before "and" before "or")
+]
+---
+layout: false
+.left-column[
+  ## Sets
+  ### Terms and Notation
+  ### Special cases
+  ## Functions
+  ### Terms and Notation
+]
+.right-column[
+## Terminology and Notation for Functions
+A function \\(f: \mathbf{A} \rightarrow \mathbf{B}\\) is a relation that uniquely associates elements of one set with elements of another set.
+More formally, a function from \\(\mathbf{A}\\) to \\(\mathbf{B}\\) is an object \\(f\\) such that every 
+\\(a \in \mathbf{A}\\) is uniquely associated with an object 
+\\(b \in \mathbf{B}\\).
+
+The set \\(\mathbf{A}\\) is referred to as the _domain_ of the function \\(f\\) 
+and the set 
+\\(\\{b \in \mathbf{B} : f(a) = b \text{ for some } a \in A\\}\\) is referred to as the _range_ of the function.
+Domains and ranges are not usually specified and are usually implied by either the context ("\\(f(x)\\) is a continuous function") 
+but it is helpful to be think of this definition for abstract cases.
+
+Note: neither the domain nor the range of a function need to be "one dimensional" - for example the function
+\\[
+f(x,y) = x^2 + y^2
+\\]
+has the domain of
+\\[
+\mathbb{R} \times \mathbb{R} = \\{(x,y) : x \in \mathbb{R}, y \in \mathbb{R}\\}
+\\]
+]
 ---
 layout: false
 .left-column[
@@ -24,9 +311,9 @@ layout: false
    
    For example, Newton's 2nd Law of Motion, 
    \\[F = m \cdot a\\] 
-   is a deterministic relationship. 
-
-   If we know all the values on one side (for instance \(m = 2\) kg and \(a = 5 m/s^2\)) then we know the force (10 N).
+   is a deterministic relationship. It is often userful to describe these relationships using functional notation, i.e.,
+   \\[F(m,a) = m \cdot a\\] 
+   In this case we are saying that we know all the values on one side (say, \\(m = 2\\) kg and \\(a = 5 m/s^2\\)) then we know the force (10 N).
 ]
 ---
 layout: false
@@ -148,6 +435,7 @@ layout: false
    
 
    **Example**: a double pendulum (credit to Bassam Jalgha)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/brs8l-Jzbl4" frameborder="0" allowfullscreen></iframe>
 
 
 ]
@@ -169,337 +457,58 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# Section 1.1
-## Engineering Statistics: What and Why
+# Probability
+## A Review of the Basics
 ---
 layout: false
 .left-column[
-  ## What and Why
-  ### Engineers In General
+  ## The Probabilistic Framework
+  ### Random Experiments
 ]
 .right-column[
 
-<center>
-   <h2> What Do Engineers Do? </h2>
-</center>
+## The Probabilistic Framework
 
--  Design/build/operate/improve some system
+Problems that can be solved using probabilistic concepts usually have a sort of "framework". We identify the parts of the framework as:
 
--  Use both **quantitative theories** (i.e., mathematical) and **scientific principles** (i.e., physics, chemistry, psychology(?)) as a guide
+-  **A random experiment**: an experiment with a non-deterministic outcome
 
--  Obvious issue - math/science vast, no one knows everything. 
+-  **Sample Space**: the set of all possible outcomes
 
--  Additionally, engineers must work outside of "lab conditions" - there is no control over the environment, the users, the timing, ...
-]
----
-name: inverse
-layout: true
-class: center, middle, inverse
----
-# So, here's the situation:
-## The "system" you want to improve is essentially unique 
-## There are competing theories that all seem equal
-## Experts disagree bitterly about what to do 
-# What's an engineer to do???
----
-#Option 1: Just Give Up
+-  **Event**: an individual outcome of the experiment (an element of the sample space)
 
-## A few drawbacks to this one
----
-#Option 2: Gather Some Data
+-  **Probability**: a quantity reflecting the chance of a specific outcome being observed
 
-## Figure Out What Really Matters in the System
----
-layout: false
-.left-column[
-## What and Why
-### Engineers In General
-### Data?
-]
-.right-column[
-## What Do I Mean Data?
-
-Data is **essentially just information** we can record.
-
-Examples are incredibly easy to come up with:
-
--  Students with majors and courses they enrolled in
-```text
-student   major         course
-John      Philosophy    EASY 101
-Kate      Engineering   SMRT 500
-Mike      Mathematics   MATH 000
-```
-
--  Amount I can bench over time
-```text
-Date     Weight
-08/01    55 lbs.
-08/02    56 lbs.
-08/03    57 lbs.
-08/04    59 lbs.
-...      ...
-12/21    345 lbs.
-```
-
-Really trivial to come up with examples
-]
----
-name: inverse
-layout: true
-class: center, middle, inverse
----
-<center>
-   <h1> Getting Data is Easy </h1>
-   <h1> Getting Good Data is Hard </h1>
-</center>
----
-layout: false
-.left-column[
-## What and Why
-### Engineers In General
-### Data?
-### Example 1
-]
-.right-column[
-##Two Competing Theories
-
-###Goal: Load gears into a continuous carburizing furnace to minimize distortion during heat treating 
-
--  **Theory 1**: Load the gears laid in a stack
-
--  **Theory 2**: Hang the gears from a bar
-
--  **Complications**: No two gears exactly the same - if we test it how do we decide what was the effect of the gear and what was the effect of the loading method?
-
--  **Smart engineer**: tried it both ways and collected the distortion measures from multiple attempts
-```text
-Method    Distortion measure (.0001 in.)
-Laid      5, 8, 8,  9,  9,  9,  9, 10, 10, ..., 19, 27
-Hung      7, 8, 8, 10, 10, 10, 10, 11, 11, ..., 31, 36
-```
 ]
 ---
 layout: false
 .left-column[
-## What and Why
-### Engineers In General
-### Data?
-### Example 1
-]
-.right-column[
-##Two Competing Theories
-
-###Goal: minimize distortion 
-
-```text
-Method    Distortion measure (.0001 in.)
-Laid      5, 8, 8,  9,  9,  9,  9, 10, 10, ..., 19, 27
-Hung      7, 8, 8, 10, 10, 10, 10, 11, 11, ..., 31, 36
-```
-
-Plots and summary values help us see what's going on:
-
-```text
-Mean hung runout:  17.9
-Mean laid runout:  12.6
-```
-Looks like laying gears in a stack is best
-]
----
-layout: false
-.left-column[
-## What and Why
-### Engineers In General
-### Data?
-### Example 1
-### Engineering Statistics
-]
-.right-column[
-## Engineering Statistics
-
-Collecting good data is part of what engineering statistics is concerned with, 
-but of course that's only the first part.
-
-Our text book defines it this way:
-
-> **Engineering Statistics** is the study of how *best* to
->
-> 1. Collect engineering data
-> 2. summarize or describe engineering data, and
-> 3. draw formal inferences and practical conclusions on the basis of engineering data
->
-> all while recognizing the reality of variation
-
-Recognizing the "reality of variation" in the distortion example led the engineer to run multiple tests.
-This helped rules out the possibility that hanging gears is better since the chance that the gears were worse so often is pretty low
-
-]
----
-name: inverse
-layout: true
-class: center, middle, inverse
----
-# All good engineers use statistical tools
-
-# The only question is whether they will use good ones
----
-# Section 1.2
-## Basic Terminology
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
+  ## The Probabilistic Framework
+  ### Random Experiments
+  ### Sample Spaces
+  ### Events
+  ### Probability
 ]
 .right-column[
 
-## Types of Statistical Studies
+## Sample Spaces
 
-> An **observational study** is one in which the investigator's role is basically passive. A process or phenomenon is watched and data are recorded, but there is no intervention on the part of the person conducting the study.
+-  A sample space is a set of all possible outcomes
 
-> An **experimental study** (or, more simply, an experiment) is one in which the investigator's role is active. Process variables are manipulated, and the study environment is regulated.
+-  Sample spaces can range greatly in complexity
 
--  Experiments: faster, more reliable results, helps determine causal relationships.
+-  Sample spaces can be **finite**, **countably infinite**, or **uncountably infinite**
 
--  These are the "perfect world" scenarios - most studies blend both.
+## Events
 
--  Even under ideal circumstances, some variables can not be controlled.
+-  Events are subsets of the sample space
 
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-]
-.right-column[
+-  _Elementary events_ are subsets of size 1, i.e., they are individual outcomes
 
-## Extent to Which Results Can be Applied
+## Probability
 
-> An **enumerative study** is one in which there is a particular, well-defined, finite group of objects under study. Data are collected on some or all of these objects, and conclusions are intended to apply only to those objects.
+-  A function whose domain is the events and whose range is \\([0,1]\\)
 
-> A **population** is the entire group of objects about which one wishes to gather information in a statistical study.
-
-> A **sample** is a group of objects on which one actually gathers data. In the case of an enumerative investigation, the sample is a subset of the population (and can in some cases include the entire population).
-
--  Example: If I am ordering 5000 microprocessors from Intel, I may test a few to see how well they actually work. In this case, the shipment is my population and the ones I test make the sample. I hope to use the sample to make a judgement about the entire shipment (so if 3/4 don't work, I should probably send the shipment back). 
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-]
-.right-column[
-
-## Extent to Which Results Can be Applied
-
-> An **analytical study** is one in which a process or phenonmeon is investigated at one point in space and time with the hope that the data collected will be representative of a system behavior at other places and times under similar conditions. In this kind of study, there is rarely, if ever, a particular well-defined group of objects to which conclusions are thought to be limited.
-
-- **Analytical studies** tend to be the most important in engineering.
-
--  Ex: Stock prices are dropping. I may determine if something doesn't change in the trading environment, they will continue dropping.
-
--  Ex: The gear distortion example (Chapter 1, Example 1).
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-]
-.right-column[
-
-# Telling the Difference
-
-## Observation vs. Experiment
--  If things are being manipulated by the researcher, it's more of an experiment than an observational study.
-
-## Enmerative vs. Analytical
--  We generally frown on people discussing **conceptual populations** - populations consisting of "all widgets that have heretofore existed or could one day exist in this universe or some other" type stuff 
-
--  Basically, if the population isn't well described, concrete thing, it's an analytical study.
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-### Types of Data
-]
-.right-column[
-
-# Types of Data: Qualitative
->  **Qualitative** or **categorical** data are the values of basically nonnumerical characteristics associated with items in a sample. 
-
--  Ex: Eye color, choice of major, hometown, response to the question "have you ever been to Europe"
-
-Qualitative variables can have a natural ordering - it's just that the ordering doesn't translate to an amount of something.
-Only by aggrigation and counting can we get meaningful numerical values from qualitative variables.
-
--  Example: Classifying parts as (1) Conforming (it works), (2) Rework (fixable) and (3) Scrap (broken forever)
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-### Types of Data
-]
-.right-column[
-
-# Types of Data: Quantitative
->  **Quantitative** or **numerical** data are values of numerical characteristics associated with items in a sample. 
-
--  Ex: Counts of the number of times some phenomenon occurs, measurements like weight/height
-
-We can further describe **continuous** variables (where the actual result could be any value in a continuous interval) from **discrete** variables (where the number of values the variable could take are countable).
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-### Types of Data
-### Ex: Machine Parts
-]
-.right-column[
-# Example: Machine Parts
-
-> Suppose we get a shipment of 5000 machine parts and would like to verify that the shipment meets the standards the machinist agreed to.  We take out 100 parts and examine them carefully.  To verify that the parts are as strong as we anticipated, we measure the "Rockwell hardness" with a machine that is accurate to the first decimal place. We also examine each part for scratches and record it weight.  Further, we run the part in a test machine to determine if it works correctly.
-
-**Question**: How many data values are we collecting from each part and what type of data values are they?
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-### Types of Data
-### Ex: Machine Parts
-### Uni/Multi/Repeat
-]
-.right-column[
-# Number of Measurements
-
-> **Univariate data** arise when only a single characteristic of each sample item is observed.
-
-> **Multivariate data** arise when observations are made on more than one characteristic of each sampled item.
-
-> **Bivariate data** are a special case of multivariate data where two characteristics are observed for each sampled item.
-
-> **Repeated measures data** arise when a sample item is being measured on the same characteristic but in multiple contexts (either with different instruments or in different scenarios).
-
-> **Paired data** are a special case of repeated measures data where the sample item is measured twice on the same characteristic.
+_example:_ flipping coins, tossing die
 
 ]
-
